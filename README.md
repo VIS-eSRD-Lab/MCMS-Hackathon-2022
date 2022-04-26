@@ -2,7 +2,7 @@
 <p>
   <img src="https://lh5.googleusercontent.com/d25Pb5p2sm14O0CFiYTf44EECgwGAMc9lO2oPelfK-s_TjErHn9XC8Hcu2F3y4QH97JKA51kGVU0b6WEqjw1IK3cbmEn8ce4NcsvMhm_qzh6tXfu8do87ZVE_v8LLJuYn8l3o0Kt">
 <p>
-This hackathon problem has been designed to evaluate your final skills for the <a target=_blank href="https://www.vinternship.org/#internship_3">MySoft Full Stack Development vInternship 2022</a>. In this problem, you have to implement a Book Shop Invoice by the instruction provided in the tasks.
+This hackathon problem has been designed to evaluate your final skills for the <a target="_blank" href="https://www.vinternship.org/#internship_3">MySoft Full Stack Development vInternship 2022</a>. In this problem, you have to implement a Book Shop Invoice by the instruction provided in the tasks.
  
 ## Guidelines:
 ### Hackathon (10:30 a.m - 2:30 p.m)  Times: 4 hours

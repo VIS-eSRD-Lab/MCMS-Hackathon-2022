@@ -5,7 +5,12 @@
 This hackathon problem has been designed to evaluate your final skills for the <a target="_blank" href="https://www.vinternship.org/#internship_3">MySoft Full Stack Development vInternship 2022</a>. In this problem, you have to implement a Book Shop Invoice by the instruction provided in the tasks.
  
 ## Guidelines:
-### Hackathon (10:30 a.m - 2:30 p.m)  Times: 4 hours
+### Hackathon Information
+  ```diff
+  ! Date: 27-04-2022
+  ! Time: 10:00 AM - 2:30 PM
+  ! Duration: 4 hours
+  ```
 1. This problem has 2 tasks.
 2. Use this code base for solving the problem. 
 3. Make a commit after you complete a task. You must submit your solution by pushing all your commits to your branch ( branchname will be your Intern ID ) on Git Repository at the end of the hackathon.

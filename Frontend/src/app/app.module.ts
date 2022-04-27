@@ -10,10 +10,14 @@ import {AuthorListComponent} from './components/author-list/author-list.componen
 import {AddAuthorComponent} from './components/add-author/add-author.component';
 import {AuthorDetailsComponent} from './components/author-details/author-details.component';
 import {AuthorUpdateComponent} from './components/author-update/author-update.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {DataTablesModule} from "angular-datatables";
 import {NgSelectModule} from "@ng-select/ng-select";
+import { AddInvoiceComponent } from './components/Invoice/add-invoice/add-invoice.component';
+import { InvoiceDetailsComponent } from './components/Invoice/invoice-details/invoice-details.component';
+import { InvoiceListComponent } from './components/Invoice/invoice-list/invoice-list.component';
+import { UpdateInvoiceComponent } from './components/Invoice/update-invoice/update-invoice.component';
 
 @NgModule({
   declarations: [
@@ -24,17 +28,22 @@ import {NgSelectModule} from "@ng-select/ng-select";
     AddAuthorComponent,
     AuthorDetailsComponent,
     AuthorUpdateComponent,
+    AddInvoiceComponent,
+    InvoiceDetailsComponent,
+    InvoiceListComponent,
+    UpdateInvoiceComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    RouterModule,
-    FormsModule,
-    HttpClientModule,
-    DataTablesModule,
-    FormsModule,
-    NgSelectModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        RouterModule,
+        FormsModule,
+        HttpClientModule,
+        DataTablesModule,
+        FormsModule,
+        NgSelectModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

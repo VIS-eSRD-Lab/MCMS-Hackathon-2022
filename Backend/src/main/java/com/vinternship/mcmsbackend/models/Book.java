@@ -15,6 +15,7 @@ public class Book {
     private String country;
     private String link;
     private String imageLink;
+    private int price;
 
     // Empty constructor
     public Book() {
@@ -22,7 +23,7 @@ public class Book {
 
     // Constructor
     public Book(String title, String language, int year, int pages, String author,
-                String country, String link, String imageLink) {
+                String country, String link, String imageLink, int price) {
         this.title = title;
         this.language = language;
         this.year = year;
@@ -31,6 +32,8 @@ public class Book {
         this.country = country;
         this.link = link;
         this.imageLink = imageLink;
+        this.price = price;
+
     }
 
     // Getters & setters

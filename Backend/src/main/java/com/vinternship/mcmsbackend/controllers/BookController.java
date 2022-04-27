@@ -53,16 +53,7 @@ public class BookController {
     @PostMapping("/books")
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         try {
-            Book _book = bookRepository.save(new Book(
-                    book.getTitle(),
-                    book.getLanguage(),
-                    book.getYear(),
-                    book.getPages(),
-                    book.getAuthor(),
-                    book.getCountry(),
-                    book.getLink(),
-                    book.getImageLink()
-            ));
+            Book _book = bookRepository.save(book);
             return new ResponseEntity<>(_book, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);

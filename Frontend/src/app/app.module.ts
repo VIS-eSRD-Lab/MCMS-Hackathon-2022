@@ -26,6 +26,9 @@ import { AddMultipleBooksComponent } from './components/bookShop/add-multiple-bo
 import { BookDetailsComponent } from './components/book/book-details/book-details.component';
 import { BookshopDetailsComponent } from './components/bookshop/bookshop-details/bookshop-details.component';
 
+import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
+import { DetailsInvoiceComponent } from './details-invoice/details-invoice.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,6 +49,9 @@ import { BookshopDetailsComponent } from './components/bookshop/bookshop-details
     AddMultipleBooksComponent,
     BookDetailsComponent,
     BookshopDetailsComponent,
+
+    AddInvoiceComponent,
+    DetailsInvoiceComponent,
   ],
   imports: [
     BrowserModule,

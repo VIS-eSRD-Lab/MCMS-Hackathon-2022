@@ -13,6 +13,8 @@ import {BookDetailsComponent} from "./components/book/book-details/book-details.
 import { BookshopDetailsComponent } from './components/bookshop/bookshop-details/bookshop-details.component';
 import {UpdateBookComponent} from "./components/book/update-book/update-book.component";
 import {UpdateBookShopComponent} from "./components/bookShop/update-book-shop/update-book-shop.component";
+import {DetailsInvoiceComponent} from "./details-invoice/details-invoice.component";
+import {AddInvoiceComponent} from "./add-invoice/add-invoice.component";
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -28,6 +30,8 @@ const routes: Routes = [
   {path: 'bookshop-list', component: ListOfBookShopsComponent},
   {path:'bookshop-details/:id',component: BookshopDetailsComponent},
   {path:'update-bookshop/:id',component:UpdateBookShopComponent},
+  {path: 'details-invoice/:id',component:DetailsInvoiceComponent},
+  {path:'add-invoice', component:AddInvoiceComponent}
 ];
 
 @NgModule({

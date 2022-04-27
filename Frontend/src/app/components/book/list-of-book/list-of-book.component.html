@@ -1,0 +1,69 @@
+<!--Regular List-->
+
+<div class="card shadow rounded">
+  <div class="card-body">
+    <div class="list row">
+      <div class="col-12">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control form-control-sm" placeholder="Search by name" [(ngModel)]="name"/>
+          <div class="input-group-append">
+            <button class="btn-sm btn btn-outline-secondary" type="button" (click)="searchBookByName()">
+              <i class="bi bi-search"></i> Search
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <h4><i class="bi bi-people-fill"></i> Book List
+          <button class="btn btn-primary btn-sm" (click)="refreshList();" style="float: right"><i
+            class="bi bi-arrow-clockwise"></i> Reload
+          </button>
+        </h4>
+        <hr>
+        <ul class="list-group">
+          <a class="list-group-item list-group-item-action"
+             *ngFor="let book of books;" [routerLink]="['/book-details', book.id]">
+            <i class="bi bi-person-circle"></i> {{ book.title}}
+          </a>
+        </ul>
+
+        <button class="mt-3 btn btn-sm btn-danger" (click)="removeAllBooks()">
+          <i class="bi bi-person-x-fill"></i> Remove All
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ Datatables Grid View
+
+<div class="card mt-3 shadow rounded">
+  <div class="card-body">
+    <h4 class="text-info text-center mt-2 mb-2"><i class="bi bi-people-fill"></i> List of Books</h4>
+    <hr>
+    <table datatable [dtOptions]="dtOptions" class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th><i class="bi bi-person-circle"></i> Name</th>
+        <th><i class="bi bi-envelope-fill"></i> Email</th>
+        <th><i class="bi bi-phone-fill"></i> Phone</th>
+        <th><i class="bi bi-info-square-fill"></i> Age</th>
+        <th><i class="bi bi-calendar3"></i> Reg. Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books">
+        <td><a [routerLink]="['/book-details', book.id]">{{ book.title }}</a></td>
+        <td>{{ book.title }}</td>
+        <td>{{ book.publisher }}</td>
+<!--        <td>{{ author.age }}</td>-->
+<!--        <td>{{ author.registration | date }}</td>-->
+      </tr>
+      </tbody>
+    </table>
+    <button class="mt-3 btn btn-sm btn-danger" (click)="removeAllBooks()">
+      <i class="bi bi-person-x-fill"></i> Remove All
+    </button>
+  </div>
+</div>
+

@@ -1,0 +1,34 @@
+<div class="card border-info">
+  <div class="card-header bg-dark text-white">
+    <i class="bi bi-person-circle"></i> Book Details
+  </div>
+  <div class="card-body">
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <h5 class="card-title"><b>Name: </b>{{invoice.user_id}}</h5>
+        <hr>
+        <h6><b><i class="bi bi-info-square-fill"></i> Price: </b>{{invoice.price}}</h6>
+        <h6><b><i class="bi bi-phone-fill"></i> Contact No: </b>{{invoice.contactno}}</h6>
+        <h6><b><i class="bi bi-phone-fill"></i> Contact No: </b>{{invoice.contactno}}</h6>
+        <h6><b><i class="bi bi-phone-fill"></i> Item list: </b>{{invoice.item_list}}</h6>
+        <h6><b><i class="bi bi-phone-fill"></i> Amount Of Items: </b>{{invoice.amount_ofitems}}</h6>
+        <h6><b><i class="bi bi-phone-fill"></i> Address: </b>{{invoice.address}}</h6>
+        <hr>
+        <h6><b><i class="bi bi-book-fill"></i> Book  </b></h6>
+        <ol>
+          <li *ngFor="let g of invoice.book">{{g.id}}</li>
+        </ol>
+        <hr>
+        <button (click)="deleteInvoice(invoice.id)" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete
+        </button>
+        <button (click)="updateInvoice(invoice.id)" class="btn btn-sm btn-primary float-end"><i
+          class="bi bi-pencil-square"></i> Edit
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer bg-dark text-white">
+    <!--    <b><i class="bi bi-calendar3"></i> Reg. date: </b>{{book.registration | date}}-->
+  </div>
+</div>

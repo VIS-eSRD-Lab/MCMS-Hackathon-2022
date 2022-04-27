@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-md-8 col-sm-12">
+    <div class="card border-info shadow">
+      <div class="card-body">
+        <form ngNativeValidate #authorForm=ngForm class="submit-form">
+          <div *ngIf="!submitted">
+            <div class="form-group">
+              <label for="name">User Name</label>
+              <input type="text" class="form-control" id="name" required [(ngModel)]="invoice.user_id" name="name"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="books_price">Address</label>
+              <input type="text" class="form-control" id="books_price" required [(ngModel)]="invoice.address" name="book_price"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="contactno">Contact No</label>
+              <input type="text" class="form-control" id="contactno" required [(ngModel)]="invoice.contactno" name="contactno"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="book">Book</label>
+              <ng-select bindLabel="name" id="book" name="book"
+
+                         appendTo="body" [multiple]="true" [(ngModel)]="selected_books">
+                <ng-option [value]="item" *ngFor="let item of db_books">
+                  {{item.name}}
+                </ng-option>
+              </ng-select>
+            </div>
+
+
+            <div class="form-group mt-2">
+              <label for="price">Price</label>
+              <input type="text" class="form-control" id="price" required [(ngModel)]="invoice.price" name="price"/>
+            </div>
+            <div class="form-group mt-2">
+              <label for="item">Item list</label>
+              <input type="text" class="form-control" id="item" required [(ngModel)]="invoice.item_list" name="item"/>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="amount">Amount of items</label>
+              <input type="text" class="form-control" id="amount" required [(ngModel)]="invoice.amount_ofitems" name="amount"/>
+            </div>
+
+
+
+
+            <button (click)="saveInvoice()" class="btn btn-sm float-end btn-success mt-3"
+                    [disabled]="authorForm.invalid"><i
+              class="bi bi-person-check-fill"></i> Submit
+            </button>
+          </div>
+
+          <div *ngIf="submitted">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+              <strong>Tutorial was submitted successfully!</strong>
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <button class="btn btn-sm float-end btn-primary" (click)="newInvoice()"><i
+              class="bi bi-person-plus-fill"></i> Add
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

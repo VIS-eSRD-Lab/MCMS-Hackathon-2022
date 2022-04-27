@@ -12,9 +12,3 @@ export class Invoice{
 }
 
 
-// @Id
-// private String id;
-// private String userid;
-// private List<Book[]> item;
-// private Integer quantity;
-// private Integer salesprice;

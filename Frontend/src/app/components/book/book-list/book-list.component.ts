@@ -24,21 +24,7 @@ export class BookListComponent implements OnInit {
 
   selectedBook: Book[] = [];
 
-  price?: number;
 
-
-
-  quantity: number =1;
-
-  // invoice ={
-  //     id: '',
-  //     userId: '',
-  //     books:this.books,
-  //     quantity: 0,
-  //     total: 0
-  //
-  //
-  // };
 
     invoice = {
         id: '',
@@ -106,11 +92,6 @@ export class BookListComponent implements OnInit {
                         // @ts-ignore
                         this.invoice.salePrice += Number(this.selectedBook[i]!.price);
                     }
-
-
-
-                    // this.price = this.abook.price * this.quantity;
-
                     console.log(this.selectedBook);
                 },
 
@@ -135,30 +116,12 @@ export class BookListComponent implements OnInit {
 
     }
 
-    countBookPrice(){
 
-      console.log(this.quantity);
-      this.quantity++;
-
-      // this.price = this.perBookPrice * this.quantity;
-    }
 
     removeBook(id: any){
         this.selectedBook.splice(id,1);
         console.log(this.selectedBook);
         console.log(id);
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

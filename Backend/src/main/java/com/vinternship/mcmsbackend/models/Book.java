@@ -15,14 +15,22 @@ public class Book {
     private String country;
     private String link;
     private String imageLink;
+    private String price;
+
+
 
     // Empty constructor
     public Book() {
     }
 
     // Constructor
-    public Book(String title, String language, int year, int pages, String author,
-                String country, String link, String imageLink) {
+
+
+    public Book(String id, String title, String language,
+                int year, int pages, String author,
+                String country, String link,
+                String imageLink, String price) {
+        this.id = id;
         this.title = title;
         this.language = language;
         this.year = year;
@@ -31,6 +39,7 @@ public class Book {
         this.country = country;
         this.link = link;
         this.imageLink = imageLink;
+        this.price = price;
     }
 
     // Getters & setters
@@ -100,6 +109,14 @@ public class Book {
 
     public void setImageLink(String imageLink) {
         this.imageLink = imageLink;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     // To string method

@@ -54,6 +54,7 @@ public class BookController {
     public ResponseEntity<Book> createBook(@RequestBody Book book) {
         try {
             Book _book = bookRepository.save(new Book(
+                    book.getId(),
                     book.getTitle(),
                     book.getLanguage(),
                     book.getYear(),
@@ -61,7 +62,8 @@ public class BookController {
                     book.getAuthor(),
                     book.getCountry(),
                     book.getLink(),
-                    book.getImageLink()
+                    book.getImageLink(),
+                    book.getPrice()
             ));
             return new ResponseEntity<>(_book, HttpStatus.CREATED);
         } catch (Exception e) {

@@ -1,5 +1,4 @@
 package com.vinternship.mcmsbackend.models;
-
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.Date;
@@ -10,15 +9,20 @@ public class Invoice {
     private String id;
     private String user_id;
     private String price;
+    private String contactno;
+    private list <Book> book;
     private int item_list;
     private int amount_ofitems;
 
-    public Invoice(String id, String user_id, String price, int item_list, int amount_ofitems) {
+    public Invoice(String id, String user_id, String price, String contactno, list<Book> book, int item_list, int amount_ofitems) {
         this.id = id;
         this.user_id = user_id;
         this.price = price;
+        this.contactno = contactno;
+        this.book = book;
         this.item_list = item_list;
         this.amount_ofitems = amount_ofitems;
+
     }
 
     public String getId() {
@@ -43,6 +47,22 @@ public class Invoice {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getContactno() {
+        return contactno;
+    }
+
+    public void setContactno(String contactno) {
+        this.contactno = contactno;
+    }
+
+    public list<Book> getBooks() {
+        return book;
+    }
+
+    public void setBooks(list<Book> books) {
+        this.book = books;
     }
 
     public int getItem_list() {

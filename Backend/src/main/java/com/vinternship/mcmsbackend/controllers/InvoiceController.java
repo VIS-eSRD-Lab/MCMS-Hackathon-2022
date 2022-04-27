@@ -19,23 +19,17 @@ import java.util.Optional;
 public class InvoiceController {
     @Autowired
     InvoiceRepository invoiceRepository;
-    
+
     @GetMapping("/invoice")
-    public ResponseEntity<List<Author>> getAllInvoices(@RequestParam(required = false) String name) {
+    public ResponseEntity<List<Invoice>> getAllInvoices() {
         try {
-            List<Author> authors = new ArrayList<Author>();
+            List<Invoice> invoices = new ArrayList<Invoice>();
+            invoiceRepository.findAll().forEach(invoices::add);
 
-            if (name == null) {
-                invoiceRepository.findAll().forEach(authors::add);
-            } else {
-                invoiceRepository.findInvoiceById(name).forEach(authors::add);
-            }
-
-            if (authors.isEmpty()) {
+            if (invoices.isEmpty()) {
                 return new ResponseEntity<>(HttpStatus.NO_CONTENT);
             }
-
-            return new ResponseEntity<>(authors, HttpStatus.OK);
+            return new ResponseEntity<>(invoices, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -59,6 +53,8 @@ public class InvoiceController {
                     invoice.getId(),
                     invoice.getUser_id(),
                     invoice.getPrice(),
+                    invoice.getContactno(),
+                    invoice.getBooks(),
                     invoice.getItem_list(),
                     invoice.getAmount_ofitems()
 

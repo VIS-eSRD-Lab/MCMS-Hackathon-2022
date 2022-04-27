@@ -103,7 +103,7 @@ public class AuthorController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    };
 
     @GetMapping("/authors/age/{age}")
     public ResponseEntity<List<Author>> findByAuthorAge(@PathVariable("age") Integer age) {

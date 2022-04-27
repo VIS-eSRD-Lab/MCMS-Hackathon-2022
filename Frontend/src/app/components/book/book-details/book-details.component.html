@@ -1,0 +1,35 @@
+<div class="card border-info">
+  <div class="card-header bg-dark text-white">
+    <i class="bi bi-person-circle"></i> Book Details
+  </div>
+  <div class="card-body">
+    <div class="row">
+
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <h5 class="card-title"><b>Name: </b>{{book.title}}</h5>
+        <hr>
+        <h6><b><i class="bi bi-info-square-fill"></i> Price: </b>{{book.price}}</h6>
+        <h6><b><i class="bi bi-phone-fill"></i> Year Of Publication: </b>{{book.year_of_publication}}</h6>
+
+        <h6><b><i class="bi bi-book-fill"></i> Book Authors: </b></h6>
+        <ol>
+          <li *ngFor="let a of book.author">{{a.name}}</li>
+        </ol>
+        <hr>
+        <h6><b><i class="bi bi-book-fill"></i> Book Genres: </b></h6>
+        <ol>
+          <li *ngFor="let g of book.genre">{{g.name}}</li>
+        </ol>
+        <hr>
+        <button (click)="deleteBook(book.id)" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i> Delete
+        </button>
+        <button (click)="updateBook(book.id)" class="btn btn-sm btn-primary float-end"><i
+          class="bi bi-pencil-square"></i> Edit
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer bg-dark text-white">
+<!--    <b><i class="bi bi-calendar3"></i> Reg. date: </b>{{book.registration | date}}-->
+  </div>
+</div>

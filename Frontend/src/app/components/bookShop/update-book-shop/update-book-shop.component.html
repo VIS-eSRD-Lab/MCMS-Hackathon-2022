@@ -1,0 +1,55 @@
+<div class="row mt-3 justify-content-center">
+  <div class="col-lg-8 col-md-8 col-sm-12">
+    <div class="card border-info shadow">
+      <div class="card-body">
+        <form ngNativeValidate #authorForm=ngForm class="submit-form">
+          <div class="form-group">
+            <label for="name">Book Shop  Title</label>
+            <input type="text" class="form-control" id="name" required [(ngModel)]="bookShop.title" name="name"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="shop_number">Shop Number</label>
+            <input type="text" class="form-control" id="shop_number" required [(ngModel)]="bookShop.number" name="email"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="location">Shop Location</label>
+            <input type="text" class="form-control" id="location" required [(ngModel)]="bookShop.location" name="email"/>
+          </div>
+
+
+          <div class="form-group mt-2">
+            <label for="contact">Shop's Contact No</label>
+            <input type="number" class="form-control" id="contact" required [(ngModel)]="bookShop.contact_no" name="age"/>
+          </div>
+
+          <div class="form-group mt-2">
+            <label for="mail">Shop's Mail Address</label>
+            <input type="email" class="form-control" id="mail" required [(ngModel)]="bookShop.email" name="age"/>
+
+          </div>
+          <div class="form-group mt-2">
+            <label for="genre">Select Books In The Shop</label>
+            <ng-select bindLabel="book" id="genre" name="genre"
+
+                       appendTo="body" [multiple]="true" [(ngModel)]="selected_book">
+              <ng-option [value]="item" *ngFor="let item of books">
+                {{item.title}}
+              </ng-option>
+            </ng-select>
+          </div>
+          <div *ngIf="submitted" class="alert mt-3 mb-3 alert-warning alert-dismissible fade show" role="alert">
+            <strong>Book Shop  was updated successfully!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+          <button (click)="updateBookShop()" class="btn btn-sm float-end btn-success mt-3"
+                  [disabled]="authorForm.invalid"><i
+            class="bi bi-person-check-fill"></i> Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -28,6 +28,7 @@ import { BookshopDetailsComponent } from './components/bookshop/bookshop-details
 
 import { AddInvoiceComponent } from './add-invoice/add-invoice.component';
 import { DetailsInvoiceComponent } from './details-invoice/details-invoice.component';
+import { UpdateInvoiceComponent } from './update-invoice/update-invoice.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { DetailsInvoiceComponent } from './details-invoice/details-invoice.compo
 
     AddInvoiceComponent,
     DetailsInvoiceComponent,
+    UpdateInvoiceComponent,
   ],
   imports: [
     BrowserModule,

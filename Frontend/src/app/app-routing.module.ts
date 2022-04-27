@@ -15,6 +15,7 @@ import {UpdateBookComponent} from "./components/book/update-book/update-book.com
 import {UpdateBookShopComponent} from "./components/bookShop/update-book-shop/update-book-shop.component";
 import {DetailsInvoiceComponent} from "./details-invoice/details-invoice.component";
 import {AddInvoiceComponent} from "./add-invoice/add-invoice.component";
+import {UpdateInvoiceComponent} from "./update-invoice/update-invoice.component";
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
@@ -31,7 +32,8 @@ const routes: Routes = [
   {path:'bookshop-details/:id',component: BookshopDetailsComponent},
   {path:'update-bookshop/:id',component:UpdateBookShopComponent},
   {path: 'details-invoice/:id',component:DetailsInvoiceComponent},
-  {path:'add-invoice', component:AddInvoiceComponent}
+  {path:'add-invoice', component:AddInvoiceComponent},
+  {path:'update-invoice',component:UpdateInvoiceComponent}
 ];
 
 @NgModule({

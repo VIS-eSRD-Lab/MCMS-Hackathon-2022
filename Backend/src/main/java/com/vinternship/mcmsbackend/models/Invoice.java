@@ -5,4 +5,5 @@ import org.springframework.data.annotation.Id;
 public class Invoice {
     @Id
     private String Id;
+    private String Name;
 }

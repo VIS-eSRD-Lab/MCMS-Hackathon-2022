@@ -14,6 +14,8 @@ import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {DataTablesModule} from "angular-datatables";
 import {NgSelectModule} from "@ng-select/ng-select";
+import { BookListComponent } from './components/book/book-list/book-list.component';
+import {InvoiceComponent} from "./components/book/invoice/invoice.component";
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import {NgSelectModule} from "@ng-select/ng-select";
     AddAuthorComponent,
     AuthorDetailsComponent,
     AuthorUpdateComponent,
+    BookListComponent,
+    InvoiceComponent,
   ],
   imports: [
     BrowserModule,

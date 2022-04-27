@@ -5,6 +5,12 @@ import {AuthorListComponent} from "./components/author-list/author-list.componen
 import {AddAuthorComponent} from "./components/add-author/add-author.component";
 import {AuthorDetailsComponent} from "./components/author-details/author-details.component";
 import {AuthorUpdateComponent} from "./components/author-update/author-update.component";
+import {
+  BookListComponent
+} from "./components/book/book-list/book-list.component";
+import {
+  InvoiceComponent
+} from "./components/book/invoice/invoice.component";
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -13,6 +19,8 @@ const routes: Routes = [
   {path: 'add-author', component: AddAuthorComponent},
   {path: 'author-details/:id', component: AuthorDetailsComponent},
   {path: 'update-author/:id', component: AuthorUpdateComponent},
+  {path: 'book-list', component: BookListComponent},
+  {path:'invoice', component: InvoiceComponent}
 ];
 
 @NgModule({

@@ -24,7 +24,7 @@ export class AddInvoiceComponent implements OnInit {
 
   db_books : any
 
-  selected_books?: Book[];
+  selected_books?: Item[];
 
   invoice : Invoice = {
     customerid:'',
@@ -142,8 +142,11 @@ export class AddInvoiceComponent implements OnInit {
 
   x?:string
   id?: string;
+  i?:number;
   book1 = new Book();
    addtocart(x:string){
+
+
      this.x = x;
 
      this.book1 = new Book()
@@ -171,6 +174,7 @@ export class AddInvoiceComponent implements OnInit {
        itempic: this.book1.imageLink
      };
 
+     this.selected_books?.push(data1);
 
      this.itemService.create(data1)
        .subscribe({

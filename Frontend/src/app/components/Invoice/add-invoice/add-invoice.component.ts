@@ -3,10 +3,12 @@ import {Invoice} from "../../../models/Invoice";
 import {Book} from "../../../models/Book";
 import {Observable} from "rxjs";
 import {FormArray, FormBuilder, FormGroup} from "@angular/forms";
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 import {BookService} from "../../../services/book.service";
 import {InvoiceService} from "../../../services/invoice.service";
 import {AuthorServicesService} from "../../../services/author-services.service";
+import {Item} from "../../../models/Item";
+import {ItemService} from "../../../services/item.service";
 
 @Component({
   selector: 'app-add-invoice',
@@ -28,7 +30,7 @@ export class AddInvoiceComponent implements OnInit {
     customerid:'',
     customeraddress: '',
     customercontact: '',
-    book: [],
+    item:[],
     quantity: 0,
     salesprice: 0
   }
@@ -54,7 +56,7 @@ export class AddInvoiceComponent implements OnInit {
               private bookService: BookService,
               private route: ActivatedRoute,
               private router: Router,
-              private fb: FormBuilder) {}
+              private fb: FormBuilder, private itemService : ItemService) {}
 
   ngOnInit(): void {
     this.getAllBooks();
@@ -127,8 +129,64 @@ export class AddInvoiceComponent implements OnInit {
     }
   }
 
+  item: Item = {
+
+    itemname:'',
+    itemprice:0,
+    itemauthor:'',
+    itemyear:0,
+    itemlanguage: '',
+    itempic:''
+
+  };
+
+  x?:string
+  id?: string;
+  book1 = new Book();
+   addtocart(x:string){
+     this.x = x;
+
+     this.book1 = new Book()
+
+     this.route.params.subscribe(
+       (params: Params) => {
+         this.id = params['id'.toString()];
+         this.bookService.get(this.id)
+           .subscribe({
+             next: (data) => {
+               this.book1 = data;
+               console.log(data);
+             },
+             error: (e) => console.error(e)
+           });
+       }
+     );
+
+     const data1 = {
+       itemname: this.book1.title,
+       itemprice: this.book1.price,
+       itemauthor: this.book1.author,
+       itemyear: this.book1.year,
+       itemlanguage: this.book1.language,
+       itempic: this.book1.imageLink
+     };
+
+
+     this.itemService.create(data1)
+       .subscribe({
+         next: (res) => {
+           console.log(res);
+           this.submitted = true;
+         },
+         error: (e) => console.error(e)
+       });
+
+     }
+
+     }
 
 
 
 
-}
+
+

@@ -17,9 +17,9 @@ public class Item {
     @Id
     private String id;
     private String itemname;
-    private String itemprice;
+    private int itemprice;
     private String itemauthor;
-    private String itemyear;
+    private int itemyear;
     private String itemlanguage;
     private String itempic;
 

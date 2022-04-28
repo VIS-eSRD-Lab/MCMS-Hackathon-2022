@@ -1,4 +1,5 @@
 import {Book} from "./Book";
+import {Item} from "./Item";
 
 export class Invoice {
 
@@ -6,7 +7,7 @@ export class Invoice {
   customerid?: string;
   customeraddress?: string;
   customercontact?: string;
-  book?: Book[];
+  item?: Item[];
   quantity?:number;
   salesprice?: number
 

@@ -20,22 +20,22 @@ public class Invoice {
     private String customerid;
     private String customeraddress;
     private String customercontact;
-    private List<Book[]> book;
+    private List<Item[]> item;
     private Integer quantity;
     private Integer salesprice;
 
-    public Invoice(String customerid, Integer quantity, Integer salesprice, List<Book[]> book) {
+    public Invoice(String customerid, String customeraddress, String customercontact, Integer quantity, Integer salesprice, List<Item[]> item) {
 
     }
 
-    @Override
-    public String toString() {
-        return "Invoice{" +
-                "id='" + id + '\'' +
-                ", customerid='" + customerid + '\'' +
-                ", book=" + book +
-                ", quantity=" + quantity +
-                ", salesprice=" + salesprice +
-                '}';
-    }
+//    @Override
+//    public String toString() {
+//        return "Invoice{" +
+//                "id='" + id + '\'' +
+//                ", customerid='" + customerid + '\'' +
+//                ", book=" + book +
+//                ", quantity=" + quantity +
+//                ", salesprice=" + salesprice +
+//                '}';
+//    }
 }

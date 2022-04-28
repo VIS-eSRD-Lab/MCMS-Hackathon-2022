@@ -48,7 +48,10 @@ export class BookService {
     return this.http.delete(baseUrl);
   }
 
-
+  findByTitle(title: any): Observable<Book[]> {
+    console.log(baseUrl+'/title/'+title);
+    return this.http.get<Book[]>(`${baseUrl}/title/${title}`);
+  }
 
 
 

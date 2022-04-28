@@ -15,6 +15,11 @@ import {AuthorServicesService} from "../../../services/author-services.service";
 })
 export class AddInvoiceComponent implements OnInit {
 
+  books?: Book[];
+  currentBook: Book= {};
+  currentIndex = -1;
+  title = '';
+
   db_books : any
 
   selected_books?: Book[];
@@ -52,7 +57,8 @@ export class AddInvoiceComponent implements OnInit {
               private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.db_books = this.bookService.getAll();
+    this.getAllBooks();
+
   }
 
   save() {
@@ -77,46 +83,52 @@ export class AddInvoiceComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.submitted = true;
-    this.save();
+  searchbookByName(): void {
+    this.currentBook = {};
+    this.currentIndex = -1;
+
+    this.bookService.findByTitle(this.title)
+      .subscribe({
+        next: (data) => {
+          this.books = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
   }
 
-  gotoList() {
-    this.router.navigate(['invoices']);
+  getAllBooks(): void {
+    this.bookService.getAll()
+      .subscribe({
+        next: (data) => {
+          this.books = data;
+          console.log(data);
+        },
+        error: (e) => console.error(e)
+      });
   }
 
-  cancelAdd() {
-    this.router.navigate(['invoices']);
+  refreshList(): void {
+    this.getAllBooks();
+    this.currentBook = {};
+    this.currentIndex = -1;
   }
 
-  getbookss() {
-    return this.invoiceForm.get('bookes') as FormArray;
+  removeAllBooks(): void {
+    if (confirm('Are you sure you want to delete all books')) {
+      this.bookService.deleteAll()
+        .subscribe({
+          next: (res) => {
+            console.log(res);
+            this.refreshList();
+          },
+          error: (e) => console.error(e)
+        });
+    }
   }
 
 
-  addBooks() {
-    this.invoiceForm.value.bookes.push(this.buildItem());
 
-  }
-
-  removeItems(i: number) {
-    this.invoiceForm.value.bookes.removeAt(i);
-
-  }
-
-  private buildItem(): FormGroup {
-    return this.fb.group({
-      id: [''],
-      title: [''],
-      language: [''],
-      country: [''],
-      price: [''],
-      customerid :[''],
-      customercontact : [''],
-      customeraddress  : ['']
-    });
-  }
 
 
 }
